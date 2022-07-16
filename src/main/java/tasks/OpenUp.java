@@ -17,4 +17,6 @@ public class OpenUp implements Task {
         actor.attemptsTo(Open.browserOn(uTestPage));
 
     }
+    public OpenUp() {
+    }
 }

@@ -11,7 +11,7 @@ public class SignUpStep2Page {
     public static final Target INPUT_POSTAL_CODE = Target.the("where do we write the zip or postal code")
             .located(By.xpath("//input[@id='zip']"));
 
-    public static final Target COUNTRY_LIST = Target.the("where do we look the country list")
+    public static final Target COUNTRY_LIST = Target.the("where do we look the countries options list")
             .located(By.xpath("//body/ui-view[1]/main[1]/section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[3]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/span[1]/i[1]"));
 
     public static final Target INPUT_SELECT_COUNTRY =Target.the("where do we write the country hint")
@@ -22,4 +22,7 @@ public class SignUpStep2Page {
 
     public static final Target NEXT_DEVICES_BUTTON2 = Target.the("button that show us the third register step form page")
             .located(By.xpath("//body/ui-view[1]/main[1]/section[1]/div[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/a[1]"));
+
+    public SignUpStep2Page() {
+    }
 }

@@ -9,6 +9,8 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import userinterface.*;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import java.util.Random;
+
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SignUp implements Task {
@@ -25,11 +27,17 @@ public class SignUp implements Task {
     private String password;
 
     private final static String MOBILE = "Motorola";
+    private final static String COMPUTER_VERSION = "Windows";
+    private final static String LANGUAGE = "Spanish";
+    private final static String MOBILE_MODEL = "Moto G60";
+
+    Random r = new Random();
+    String valorDado = String.valueOf(r.nextInt(100));
 
     public SignUp(String firstName, String lastName, String email, String month, String day, String year, String city, String postalCode, String country, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.email = valorDado + email;
         this.month = month;
         this.day = day;
         this.year = year;
@@ -65,11 +73,11 @@ public class SignUp implements Task {
                 WaitUntil.the(SignUpStep3Page.SELECT_COMPUTER_OPTION, isVisible()).forNoMoreThan(5).seconds(),
                 Click.on(SignUpStep3Page.SELECT_COMPUTER_OPTION),
                 Click.on(SignUpStep3Page.VERSION_LIST),
-                Enter.theValue("Windows").into(SignUpStep3Page.INPUT_SELECT_VERSION),
+                Enter.theValue(COMPUTER_VERSION).into(SignUpStep3Page.INPUT_SELECT_VERSION),
                 WaitUntil.the(SignUpStep3Page.SELECT_VERSION_OPTION, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(SignUpStep3Page.SELECT_VERSION_OPTION),
                 Click.on(SignUpStep3Page.LANGUAGE_LIST),
-                Enter.theValue("Spanish").into(SignUpStep3Page.INPUT_SELECT_LANGUAGE),
+                Enter.theValue(LANGUAGE).into(SignUpStep3Page.INPUT_SELECT_LANGUAGE),
                 WaitUntil.the(SignUpStep3Page.SELECT_LANGUAGE_OPTION, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(SignUpStep3Page.SELECT_LANGUAGE_OPTION),
                 Click.on(SignUpStep3Page.MOBILE_DEVICE_LIST),
@@ -77,7 +85,7 @@ public class SignUp implements Task {
                 WaitUntil.the(SignUpStep3Page.SELECT_MOBILE_DEVICE_OPTION, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(SignUpStep3Page.SELECT_MOBILE_DEVICE_OPTION),
                 Click.on(SignUpStep3Page.MOBILE_MODEL_LIST),
-                Enter.theValue("Moto G60").into(SignUpStep3Page.INPUT_SELECT_MOBILE_MODEL),
+                Enter.theValue(MOBILE_MODEL).into(SignUpStep3Page.INPUT_SELECT_MOBILE_MODEL),
                 WaitUntil.the(SignUpStep3Page.SELECT_MOBILE_MODEL_OPTION, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(SignUpStep3Page.SELECT_MOBILE_MODEL_OPTION),
                 Click.on(SignUpStep3Page.INPUT_OPERATING_SYSTEM),

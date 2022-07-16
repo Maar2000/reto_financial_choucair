@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class UTestSignUpData {
 
     private String firstName;
