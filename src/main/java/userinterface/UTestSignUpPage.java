@@ -28,4 +28,7 @@ public class UTestSignUpPage {
 
     public static final Target NEXT_BUTTON1 = Target.the("button that show us the second register step form page")
             .located(By.xpath("//span[contains(text(),'Next: Location')]"));
+
+    public UTestSignUpPage() {
+    }
 }

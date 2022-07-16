@@ -102,4 +102,6 @@ public class UTestSignUpData {
     public void setCountry(String country) {
         this.country = country;
     }
+    public UTestSignUpData() {
+    }
 }

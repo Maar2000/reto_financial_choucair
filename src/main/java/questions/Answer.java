@@ -20,12 +20,8 @@ public class Answer implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         boolean result;
         String successfulRegistration = Text.of(SuccessfulRegistrationPage.SUCCESSFUL_MESSAGE).viewedBy(actor).asString();
+        result = question.equals(successfulRegistration);
 
-        if (question.equals(successfulRegistration)){
-            result = true;
-        }else {
-            result = false;
-        }
         return result;
     }
 }

@@ -1,7 +1,6 @@
 package tasks;
 
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
@@ -24,6 +23,8 @@ public class SignUp implements Task {
     private String postalCode;
     private String country;
     private String password;
+
+    private final static String MOBILE = "Motorola";
 
     public SignUp(String firstName, String lastName, String email, String month, String day, String year, String city, String postalCode, String country, String password) {
         this.firstName = firstName;
@@ -72,7 +73,7 @@ public class SignUp implements Task {
                 WaitUntil.the(SignUpStep3Page.SELECT_LANGUAGE_OPTION, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(SignUpStep3Page.SELECT_LANGUAGE_OPTION),
                 Click.on(SignUpStep3Page.MOBILE_DEVICE_LIST),
-                Enter.theValue("Motorola").into(SignUpStep3Page.INPUT_SELECT_MOBILE_DEVICE),
+                Enter.theValue(MOBILE).into(SignUpStep3Page.INPUT_SELECT_MOBILE_DEVICE),
                 WaitUntil.the(SignUpStep3Page.SELECT_MOBILE_DEVICE_OPTION, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(SignUpStep3Page.SELECT_MOBILE_DEVICE_OPTION),
                 Click.on(SignUpStep3Page.MOBILE_MODEL_LIST),
